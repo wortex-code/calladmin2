@@ -1,0 +1,26 @@
+using Exiled.API.Interfaces;
+
+namespace CallAdmin
+{
+    public class Config : IConfig
+    {
+        public bool IsEnabled { get; set; } = true;
+        public float CooldownSeconds { get; set; } = 60f;
+        public uint BroadcastDuration { get; set; } = 8;
+        public bool OverrideBroadcast { get; set; } = true;
+
+        public string AdminBroadcast { get; set; } =
+            "<size=28><color=red><b>⚠ ВИКЛИК АДМІНІСТРАТОРА ⚠</b></color></size>\n" +
+            "<size=22>Гравець: <b>{nick}</b>  |  ID: <b>{id}</b></size>\n" +
+            "<size=20>Причина: <b>{reason}</b></size>";
+
+        public string CooldownMessage { get; set; } =
+            "Зачекайте ще {seconds} секунд!";
+
+        public string NoAdminsOnline { get; set; } =
+            "Адмінів зараз немає онлайн.";
+
+        public string CallerSuccess { get; set; } =
+            "✅ Адміни отримали ваш запит!";
+    }
+}
